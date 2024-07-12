@@ -1,4 +1,8 @@
-<nav>
-    <input type="text" [(ngModel)]="searchTerm" placeholder="Pesquisar Pokémon">
-    <button (click)="onSearch()">Pesquisar</button>
+<nav class="navbar ">
+    <div class=" container-fluid">
+      <a class="navbar-brand"><img class="logo" src="assets/logo-pokemon.png" alt=""></a>
+      <form class="d-flex " role="search">
+        <input class="form-control me-2 form" type="search" placeholder="Buscar Pokémon..." aria-label="Search" (input)="this.pokemonList.filterPokemon($event)">
+      </form>
+    </div>
 </nav>

@@ -1,0 +1,15 @@
+.navbar {
+    background-color: #696773;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+}
+
+.logo {
+    width: 10rem;
+}
+
+.form {
+    box-shadow: none;    
+}

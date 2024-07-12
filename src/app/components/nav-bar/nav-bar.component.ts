@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PokemonListComponent } from '../../pages/pokemon-list/pokemon-list.component';
+
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
-export class NavBarComponent {
-  searchTerm: string = '';
+export class NavBarComponent implements OnInit {
+  
 
-  constructor(private router: Router) { }
+  constructor(public pokemonList: PokemonListComponent,) { }
 
-  onSearch() {
-    this.router.navigate(['/pesquisa'], { queryParams: { term: this.searchTerm } });
+  ngOnInit(): void {
+      
   }
+
+  
 
 }

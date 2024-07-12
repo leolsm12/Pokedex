@@ -1,8 +1,16 @@
-<div>
-    <h1>Lista de Pokémon</h1>
-    <ul>
-      <li *ngFor="let pokemon of pokemons">
-        {{ pokemon.name }}
-      </li>
-    </ul>
+<app-nav-bar></app-nav-bar>
+<div class="pokedex-container">
+  <button class="nav-button left" (click)="prevPage()">&#8249;</button>
+  <div class="pokemon-list">
+    <div class="pokemon-card" *ngFor="let pokemon of filteredPokemon">
+      <div class="card">
+        <img [src]="pokemon.image" alt="{{ pokemon.name }}">
+      </div>
+      <div class="card-body">
+        <h2>{{ pokemon.name }}</h2>
+        <p class="pokemon-id">{{ pokemon.id }}</p>
+      </div>
+    </div>
   </div>
+  <button class="nav-button right" (click)="nextPage()">&#8250;</button>
+</div>
