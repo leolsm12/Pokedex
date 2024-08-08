@@ -1,8 +1,15 @@
 <nav class="navbar ">
     <div class=" container-fluid">
-      <a class="navbar-brand"><img class="logo" src="assets/logo-pokemon.png" alt=""></a>
+      <a class="navbar-brand" [routerLink]="['/pokemon-list']">
+        <img class="logo" src="assets/logo-pokemon.png" alt="">
+      </a>
       <form class="d-flex " role="search">
-        <input class="form-control me-2 form" type="search" placeholder="Buscar Pokémon..." aria-label="Search" (input)="this.pokemonList.filterPokemon($event)">
+        <input
+         class="form-control me-2 form" 
+         type="search" 
+         placeholder="Buscar Pokémon..." 
+         aria-label="Search" 
+         (input)="onSearch($event)" >
       </form>
     </div>
 </nav>

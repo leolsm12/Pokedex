@@ -1,22 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { PokemonListComponent } from '../../pages/pokemon-list/pokemon-list.component';
-
+import { Component } from '@angular/core';
+import { PokemonSearchService } from '../../services/pokemon-search.service';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.css'
+  styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent implements OnInit {
-  
+export class NavBarComponent {
+  constructor(private pokemonSearchService: PokemonSearchService) { }
 
-  constructor(public pokemonList: PokemonListComponent,) { }
-
-  ngOnInit(): void {
-      
+  onSearch(event: Event): void {
+    const value = (event.target as HTMLInputElement).value.trim().toLowerCase().replace(/ /g, '-');
+    this.pokemonSearchService.searchPokemon(value);
   }
-
-  
-
 }

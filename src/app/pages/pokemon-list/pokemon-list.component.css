@@ -10,11 +10,12 @@
   background-color: #FED766; /* cor de fundo dos botões de navegação */
   border: none;
   color: #272727; /* cor do texto dos botões de navegação */
-  font-size: 2rem;
+  font-size: 2rem; /* tamanho da fonte */
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  padding: 12px 24px; /* padding interno */
+  border-radius: 30px; /* borda arredondada */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* sombra */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
 .nav-button:hover {

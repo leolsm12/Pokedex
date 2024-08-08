@@ -2,12 +2,14 @@
 <div class="pokedex-container">
   <button class="nav-button left" (click)="prevPage()">&#8249;</button>
   <div class="pokemon-list">
-    <div class="pokemon-card" *ngFor="let pokemon of filteredPokemon">
+    <div class="pokemon-card" *ngFor="let pokemon of filteredPokemon" (click)="viewDetails(pokemon.name)">
       <div class="card">
-        <img [src]="pokemon.image" alt="{{ pokemon.name }}">
+        <img [src]="pokemon.image ? pokemon.image : pokemon.image2 || 'assets/pokeBall.png' " 
+             alt="{{ pokemon.name }}" 
+             (error)="onImageError($event)">
       </div>
       <div class="card-body">
-        <h2>{{ pokemon.name }}</h2>
+        <h2>{{ replaceHyphens(pokemon.name)}}</h2>
         <p class="pokemon-id">{{ pokemon.id }}</p>
       </div>
     </div>

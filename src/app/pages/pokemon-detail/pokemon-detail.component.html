@@ -1,0 +1,44 @@
+<app-nav-bar></app-nav-bar>
+<!-- pokemon-detail.component.html -->
+<div class="container">
+  <!-- Pokémon Principal -->
+  <div class="pokemon-detail">
+    <div class="pokemon-card-detail">
+      <div class="pokemon-image-container">
+        <img class="pokemon-image-detail" [src]="pokemon.image ? pokemon.image : pokemon.image2" alt="{{ pokemon.name }}">
+      </div>
+      <div class="pokemon-info-container">
+        <h1>{{ replaceHyphens(pokemon.name) }}</h1>
+        <p class="pokemon-id">ID: {{ pokemon.id }}</p>
+        <p>Height: {{ pokemon.height }} dm</p>
+        <p>Weight: {{ pokemon.weight }} hg</p>
+        <p>Types: {{ pokemon.types.join(', ') }}</p>
+      </div>
+      <div class="pokemon-stats-container">
+        <div *ngFor="let stat of pokemon.stats">
+          <p>{{ stat.name }}: </p>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" [style.width.%]="stat.base_stat">{{ stat.base_stat }}</div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Lista de Evoluções -->
+  <div class="pokemon-list">
+    <h2>Evoluções</h2>
+    <div class="pokemon-cards">
+      <div class="pokemon-card" *ngFor="let pokemon of evolutions" (click)="onEvolution(pokemon.name)">
+        <div class="card">
+          <img [src]="pokemon.image ? pokemon.image : pokemon.image2" alt="{{ pokemon.name }}" class="pokemon-image">
+        </div>
+        <div class="card-body">
+          <h3>{{ replaceHyphens(pokemon.name) }}</h3>
+          <p class="pokemon-id">ID: {{ pokemon.id }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
