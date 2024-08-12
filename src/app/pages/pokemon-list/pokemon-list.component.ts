@@ -13,6 +13,7 @@ export class PokemonListComponent implements OnInit {
   filteredPokemon: Pokemon[] = [];
   offset: number = 0;
   limit: number = 20;
+  value: any = '';
 
   constructor(private router: Router, private pokemonSearchService: PokemonSearchService) { }
 
@@ -36,7 +37,6 @@ export class PokemonListComponent implements OnInit {
         // Atualiza os detalhes do Pokémon na lista original
         pokemon.id = details.id;
         pokemon.image = details.image;
-        pokemon.image2 = details.image2;
       });
     });
   }
@@ -45,17 +45,21 @@ export class PokemonListComponent implements OnInit {
     if (this.offset > 0) {
       this.offset -= this.limit;
       this.loadPokemonList();
+      this.scrollToTop();
     }
+    
   }
 
   nextPage(): void {
     this.offset += this.limit;
     this.loadPokemonList();
+    this.scrollToTop();
   }
 
   filterPokemon(event: Event): void {
-    const value = (event.target as HTMLInputElement).value.trim().toLowerCase().replace(/ /g, '-');
-    this.pokemonSearchService.searchPokemon(value);
+    this.value = (event.target as HTMLInputElement).value.trim().toLowerCase().replace(/ /g, '-');
+    this.pokemonSearchService.searchPokemon(this.value);
+    this.value = "";
   }
 
   replaceHyphens(name: string): string {
@@ -68,7 +72,11 @@ export class PokemonListComponent implements OnInit {
 
   onImageError(event: Event): void {
     const element = event.target as HTMLImageElement;
-    element.src = 'assets/pokeBall.png';
+    element.src = 'assets/pokeball2.png';
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
 }

@@ -1,12 +1,15 @@
 <app-nav-bar></app-nav-bar>
 <div class="pokedex-container">
-  <button class="nav-button left" (click)="prevPage()">&#8249;</button>
+  <button class="nav-button prev" (click)="prevPage()">&#10094;</button>
   <div class="pokemon-list">
     <div class="pokemon-card" *ngFor="let pokemon of filteredPokemon" (click)="viewDetails(pokemon.name)">
       <div class="card">
-        <img [src]="pokemon.image ? pokemon.image : pokemon.image2 || 'assets/pokeBall.png' " 
-             alt="{{ pokemon.name }}" 
-             (error)="onImageError($event)">
+       
+        <img 
+         [src]="pokemon.image " 
+         alt="{{ pokemon.name }}" 
+         (error)="onImageError($event)"
+         >
       </div>
       <div class="card-body">
         <h2>{{ replaceHyphens(pokemon.name)}}</h2>
@@ -14,5 +17,5 @@
       </div>
     </div>
   </div>
-  <button class="nav-button right" (click)="nextPage()">&#8250;</button>
-</div>
+  <button class="nav-button next" (click)="nextPage()">&#10095;</button>
+</div> 

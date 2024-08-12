@@ -12,5 +12,10 @@ export class NavBarComponent {
   onSearch(event: Event): void {
     const value = (event.target as HTMLInputElement).value.trim().toLowerCase().replace(/ /g, '-');
     this.pokemonSearchService.searchPokemon(value);
+    this.onInputChange(value);
+  }
+
+  onInputChange(value: string) {
+    this.pokemonSearchService.updateInputValue(value);
   }
 }

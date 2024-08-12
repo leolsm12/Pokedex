@@ -10,6 +10,8 @@ export class PokemonSearchService {
   private allPokemonList: Pokemon[] = [];
   private pokemonListSubject = new BehaviorSubject<Pokemon[]>([]);
   pokemonList$ = this.pokemonListSubject.asObservable();
+  private inputValueSource = new BehaviorSubject<string>('');
+  currentInputValue = this.inputValueSource.asObservable();
 
   constructor(private pokemonService: PokemonService) {
     this.loadAllPokemon(); // Carregar todos os Pokémon ao iniciar o serviço
@@ -46,5 +48,9 @@ export class PokemonSearchService {
 
   getPokemonDetails(pokemon: Pokemon): Observable<Pokemon> {
     return this.pokemonService.getPokemons(pokemon.name);
+  }
+
+  updateInputValue(value: string) {
+    this.inputValueSource.next(value);
   }
 }

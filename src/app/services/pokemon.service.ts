@@ -27,15 +27,14 @@ export class PokemonService {
   }
 
   getPokemon(name: string): Observable<BasePokemon> {
-    return this.http.get<any>(`${this.apiUrl}/${name}`).pipe( 
-      map(response => ({ 
+    return this.http.get<any>(`${this.apiUrl}/${name}`).pipe(
+      map(response => ({
         id: response.id,
         name: response.name,
         url: `${this.apiUrl}/${name}`,
-        image: response.sprites.other.dream_world.front_default,
-        image2: response.sprites.other['official-artwork'].front_default,
+        image: response.sprites.other['official-artwork'].front_default,
         types: response.types.map((typeInfo: any) => typeInfo.type.name),
-      }as BasePokemon ))
+      } as BasePokemon))
     );
   }
 
@@ -46,8 +45,7 @@ export class PokemonService {
           id: response.id,
           name: response.name,
           url: `${this.apiUrl}/${name}`,
-          image: response.sprites.other.dream_world.front_default,
-          image2: response.sprites.other['official-artwork'].front_default,
+          image: response.sprites.other['official-artwork'].front_default,
           height: response.height,
           weight: response.weight,
           types: response.types.map((typeInfo: any) => typeInfo.type.name),
@@ -66,12 +64,12 @@ export class PokemonService {
             return this.http.get<any>(pokemon.urlChainEvo).pipe(
               map(evolutionChainResponse => {
                 const evolutions: PokemonEvo = {
-                  evo1: evolutionChainResponse.chain.evolves_to[0]?.evolves_to[0]?.species?.name || null,
+                  evo1: evolutionChainResponse.chain.species.name || null,
                   evo2: evolutionChainResponse.chain.evolves_to[0]?.species?.name || null,
-                  evo3: evolutionChainResponse.chain.species.name || null,
+                  evo3: evolutionChainResponse.chain.evolves_to[0]?.evolves_to[0]?.species?.name || null,
                 }
                 pokemon.evolutionChain = [evolutions];
-                return pokemon ;
+                return pokemon;
               })
             );
           })
@@ -79,10 +77,6 @@ export class PokemonService {
       })
     );
   }
-
-
-
-
 }
 
 

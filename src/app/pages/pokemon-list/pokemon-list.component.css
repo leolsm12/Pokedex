@@ -3,37 +3,31 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #EFF1F3; /* cor de fundo do container */
+  background-color: #EFF1F3;
+  /* cor de fundo do container */
 }
 
-.nav-button {
-  background-color: #FED766; /* cor de fundo dos botões de navegação */
-  border: none;
-  color: #272727; /* cor do texto dos botões de navegação */
-  font-size: 2rem; /* tamanho da fonte */
-  cursor: pointer;
-  padding: 12px 24px; /* padding interno */
-  border-radius: 30px; /* borda arredondada */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* sombra */
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-}
-
-.nav-button:hover {
-  background-color: #009FB7; /* cor de fundo dos botões de navegação ao passar o mouse */
-}
 
 .pokemon-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Define 5 colunas de tamanho igual */
-  grid-auto-rows: 300px; /* Define a altura fixa das linhas */
+  grid-template-columns: repeat(5, 1fr);
+  /* Define 5 colunas de tamanho igual */
+  grid-auto-rows: 300px;
+  /* Define a altura fixa das linhas */
   gap: 20px;
   flex-grow: 1;
   margin: 0 20px;
 }
 
+.nav-button {
+    position: fixed; /* Fixa o botão na tela */
+}
+
 .pokemon-card {
-  background-color: #FFF; /* fundo branco para os cards */
-  border: 1px solid #696773; /* borda cinza */
+  background-color: #FFF;
+  /* fundo branco para os cards */
+  border: 1px solid #696773;
+  /* borda cinza */
   border-radius: 10px;
   padding: 10px;
   text-align: center;
@@ -41,8 +35,10 @@
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Garante que os elementos sejam distribuídos de forma equitativa */
-  align-items: center; /* Centraliza os elementos horizontalmente */
+  justify-content: space-between;
+  /* Garante que os elementos sejam distribuídos de forma equitativa */
+  align-items: center;
+  /* Centraliza os elementos horizontalmente */
 }
 
 .pokemon-card:hover {
@@ -53,7 +49,8 @@
 .pokemon-card img {
   max-width: 100%;
   border-radius: 5px;
-  object-fit: contain; /* Garante que a imagem caiba no container sem cortar */
+  object-fit: contain;
+  /* Garante que a imagem caiba no container sem cortar */
 }
 
 .card {
@@ -65,33 +62,40 @@
 .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Garante que o conteúdo esteja no fim do container */
-  align-items: center; /* Centraliza os elementos horizontalmente */
+  justify-content: flex-end;
+  /* Garante que o conteúdo esteja no fim do container */
+  align-items: center;
+  /* Centraliza os elementos horizontalmente */
   flex-grow: 1;
   width: 100%;
 }
 
-.pokemon-card h2, .pokemon-card p {
+.pokemon-card h2,
+.pokemon-card p {
   margin: 10px 0;
 }
 
 .pokemon-card h2 {
   font-size: 1.2rem;
-  color: #009FB7; /* cor do título */
+  color: #009FB7;
+  /* cor do título */
 }
 
 .pokemon-card p {
-  color: #696773; /* cor do ID */
+  color: #696773;
+  /* cor do ID */
   margin: 0;
 }
 
 .pokemon-id {
-  margin-top: auto; /* Garante que o ID fique no final do container */
+  margin-top: auto;
+  /* Garante que o ID fique no final do container */
 }
 
 @media (max-width: 768px) {
   .pokemon-list {
-    grid-template-columns: repeat(2, 1fr); /* Ajusta para 2 colunas em telas menores */
+    grid-template-columns: repeat(2, 1fr);
+    /* Ajusta para 2 colunas em telas menores */
   }
 }
 
@@ -106,6 +110,7 @@
   }
 
   .pokemon-list {
-    grid-template-columns: 1fr; /* Ajusta para 1 coluna em telas menores */
+    grid-template-columns: 1fr;
+    /* Ajusta para 1 coluna em telas menores */
   }
 }

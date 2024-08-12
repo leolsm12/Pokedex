@@ -3,7 +3,6 @@ export interface BasePokemon {
     name: string;
     url: string;
     image: string;
-    image2: string;
     types: string[];  
 }
 

@@ -1,1 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
+.water {
+    background-color: #6890f0 ;
+}
+
+.fire {
+    background-color: #f05030 ;
+}
+
+.grass {
+    background-color: #78c850;
+}
+
+.electric {
+    background-color: #f8d030;
+}
+
+.fairy {
+    background-color: #ef9de6;
+}
+
+.psychic {
+    background-color: #f85888;
+}
+
+.ice {
+    background-color: #98d8d8;
+}
+
+.dragon {
+    background-color: #7038f8;
+}
+
+.dark {
+    background-color: #705848;
+}
+
+.normal {
+    background-color: #a8a878;
+}
+
+.fight {
+    background-color: #903028;
+}
+
+.flying {
+    background-color: #a890f0 ;
+}
+
+.poison {
+    background-color: #a040a0 ;
+}
+
+.ground {
+    background-color: #e0c068;
+}
+
+.rock {
+    background-color: #b8a038;
+}
+
+.bug {
+    background-color: #a8b820;
+}
+
+.ghost {
+    background-color: #705898;
+}
+
+.steel {
+    background-color: #b8b8d0;
+}
+/*nav-button*/
+.nav-button {
+    background-color: #009fb7; /* Cor de fundo do botão */
+    border: none;
+    color: #FFF; /* Cor do texto do botão */
+    padding: 10px;
+    font-size: 24px; /* Tamanho do ícone da seta */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Garante que o botão esteja acima da lista */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+  }
+  
+  .nav-button:hover {
+    background: linear-gradient(135deg, #feb47b, #fed766); /* Inverte o gradiente ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+  }
+  
+  /* Posiciona o botão anterior à esquerda */
+  .nav-button.prev {
+    left: 20px; /* Ajuste conforme necessário */
+    top: 50%; /* Posiciona verticalmente no meio da página */
+    transform: translateY(-50%); /* Centraliza verticalmente em relação ao meio da página */
+  }
+  
+  /* Posiciona o botão próximo à direita */
+  .nav-button.next {
+    right: 20px; /* Ajuste conforme necessário */
+    top: 50%; /* Posiciona verticalmente no meio da página */
+    transform: translateY(-50%); /* Centraliza verticalmente em relação ao meio da página */
+  }
+  
+  .nav-button:first-of-type {
+    left: 0;
+  }
+  
+  .nav-button:last-of-type {
+    right: 0;
+  }

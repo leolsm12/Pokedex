@@ -7,6 +7,70 @@
   padding: 20px;
 }
 
+.pesquisa-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 10px;
+  white-space: nowrap;
+  background-color: #EFF1F3;
+  border-radius: 10px;
+}
+
+.pesquisa-card {
+  background-color: #696773;
+  border: 1px solid #a8a8a8;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 200px; /* Define uma largura mínima para os cards */
+}
+
+.pesquisa-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+/* Adicione estilos para as setas de rolagem */
+.scroll-btn {
+  position: absolute;
+  top: 35%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.pesquisa-list::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem no Chrome, Safari e Edge */
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* Detalhes do Pokémon */
 .pokemon-detail {
   background-color: #EFF1F3;
@@ -14,6 +78,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 /* Detalhes do Pokémon (Imagem e Nome) */
@@ -29,7 +94,6 @@
   font-family: "Press Start 2P", system-ui;
 }
 
-
 /* Imagem do Pokémon */
 .pokemon-image-detail {
   max-width: 250px;
@@ -40,6 +104,10 @@
 /* Corpo do cartão de detalhes */
 .card-body-detail {
   text-align: center;
+}
+
+.card-body h2 {
+  white-space: normal; /* Permite quebras de linha */
 }
 
 .card-body-detail h1 {
@@ -65,14 +133,15 @@
   color: #FED766;
   text-align: center;
   font-size: 1.5em;
-}
+} 
 
 .pokemon-cards {
-  display: flex;
+  display: flex; 
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10rem;
   justify-content: center;
 }
+
 
 .pokemon-info-container {
   flex: 2; /* Deixa o conteúdo central ocupar 2 partes do espaço disponível */
@@ -87,6 +156,29 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right: 10px;
+}
+
+.stat-bar {
+  position: relative;
+  width: 100%; /* Garante que a barra de progresso ocupe toda a largura do contêiner */
+  height: 20px; /* Altura da barra de progresso */
+  background-color: #e0e0e0; /* Cor de fundo da barra */
+  border-radius: 5px; /* Bordas arredondadas */
+  overflow: hidden; /* Oculta qualquer parte que ultrapasse o contêiner */
+}
+
+.progress {
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Fundo transparente para a barra de progresso */
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #009fb7; /* Cor de fundo da barra de progresso */
+  transition: width 0.8s ease; /* Transição suave ao alterar a largura */
 }
 
 /* Cartões dos Pokémons */
@@ -99,6 +191,7 @@
   width: 150px;
   text-align: center;
 }
+
 
 .pokemon-card:hover {
   transform: scale(1.05);
@@ -137,6 +230,7 @@
 
 .stat-bar {
   width: 100%;
+  height: 1.5rem;
   background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
@@ -149,6 +243,31 @@
   border-radius: 5px;
   transition: width 0.3s ease-in-out;
 }
+
+.types-container {
+  display: flex;
+  flex-direction: column; /* Coloca o "Types:" em cima e os tipos abaixo */
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.types-label {
+  font-weight: bold; /* Faz o texto "Types:" em negrito */
+  margin-bottom: 10px; /* Adiciona um espaçamento abaixo do texto "Types:" */
+}
+
+.types-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
+  gap: 10px; /* Adiciona espaçamento entre os itens */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.type-item {
+  border-radius: 5px; /* Adiciona bordas arredondadas */
+  padding: 5px 10px; /* Adiciona padding interno */
+  text-align: center; /* Centraliza o texto dentro dos itens */
+}
+
 
 /* Responsividade para telas pequenas (smartphones) */
 @media (max-width: 768px) {
