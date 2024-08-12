@@ -17,7 +17,7 @@
   border-radius: 10px;
 }
 
-.pesquisa-card {
+.pesquisa-card{
   background-color: #696773;
   border: 1px solid #a8a8a8;
   border-radius: 10px;
@@ -29,9 +29,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-width: 200px; /* Define uma largura mínima para os cards */
+  width: 10rem;
+  height: 15rem;
+  /* Define uma largura mínima para os cards */
 }
 
+.pesquisa-card:hover {
+  cursor: pointer;
+}
 .pesquisa-card img {
   max-width: 100%;
   border-radius: 5px;
@@ -56,7 +61,8 @@
 }
 
 .pesquisa-list::-webkit-scrollbar {
-  display: none; /* Oculta a barra de rolagem no Chrome, Safari e Edge */
+  display: none;
+  /* Oculta a barra de rolagem no Chrome, Safari e Edge */
 }
 
 .scroll-btn.left {
@@ -107,7 +113,8 @@
 }
 
 .card-body h2 {
-  white-space: normal; /* Permite quebras de linha */
+  white-space: normal;
+  /* Permite quebras de linha */
 }
 
 .card-body-detail h1 {
@@ -133,18 +140,19 @@
   color: #FED766;
   text-align: center;
   font-size: 1.5em;
-} 
+}
 
 .pokemon-cards {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
-  gap: 10rem;
+  gap: 3rem;
   justify-content: center;
 }
 
 
 .pokemon-info-container {
-  flex: 2; /* Deixa o conteúdo central ocupar 2 partes do espaço disponível */
+  flex: 2;
+  /* Deixa o conteúdo central ocupar 2 partes do espaço disponível */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,7 +160,8 @@
 }
 
 .pokemon-stats-container {
-  flex: 2; /* Deixa os stats ocuparem 2 partes do espaço disponível */
+  flex: 2;
+  /* Deixa os stats ocuparem 2 partes do espaço disponível */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -161,24 +170,32 @@
 
 .stat-bar {
   position: relative;
-  width: 100%; /* Garante que a barra de progresso ocupe toda a largura do contêiner */
-  height: 20px; /* Altura da barra de progresso */
-  background-color: #e0e0e0; /* Cor de fundo da barra */
-  border-radius: 5px; /* Bordas arredondadas */
-  overflow: hidden; /* Oculta qualquer parte que ultrapasse o contêiner */
+  width: 100%;
+  /* Garante que a barra de progresso ocupe toda a largura do contêiner */
+  height: 20px;
+  /* Altura da barra de progresso */
+  background-color: #e0e0e0;
+  /* Cor de fundo da barra */
+  border-radius: 5px;
+  /* Bordas arredondadas */
+  overflow: hidden;
+  /* Oculta qualquer parte que ultrapasse o contêiner */
 }
 
 .progress {
   width: 100%;
   height: 100%;
-  background-color: transparent; /* Fundo transparente para a barra de progresso */
+  background-color: transparent;
+  /* Fundo transparente para a barra de progresso */
   position: relative;
 }
 
 .progress-bar {
   height: 100%;
-  background-color: #009fb7; /* Cor de fundo da barra de progresso */
-  transition: width 0.8s ease; /* Transição suave ao alterar a largura */
+  background-color: #009fb7;
+  /* Cor de fundo da barra de progresso */
+  transition: width 0.8s ease;
+  /* Transição suave ao alterar a largura */
 }
 
 /* Cartões dos Pokémons */
@@ -188,8 +205,22 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: transform 0.3s;
-  width: 150px;
+  width: 10rem;
+  height: 14rem;
   text-align: center;
+
+}
+
+.arrow {
+  font-size: 110px;
+  margin: 0 10px;
+  position: relative;
+  color: #FED766;
+  transition: none;
+}
+
+.arrow:hover {
+  transition: none;
 }
 
 
@@ -199,6 +230,11 @@
 
 .card {
   padding: 10px;
+  
+}
+
+.card-pokemon-list {
+  width: 8.5rem;
 }
 
 .pokemon-image {
@@ -208,7 +244,8 @@
 }
 
 .pokemon-image-container {
-  flex: 1; /* Deixa a imagem ocupar 1 parte do espaço disponível */
+  flex: 1;
+  /* Deixa a imagem ocupar 1 parte do espaço disponível */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,26 +283,36 @@
 
 .types-container {
   display: flex;
-  flex-direction: column; /* Coloca o "Types:" em cima e os tipos abaixo */
-  align-items: center; /* Centraliza os itens horizontalmente */
+  flex-direction: column;
+  /* Coloca o "Types:" em cima e os tipos abaixo */
+  align-items: center;
+  /* Centraliza os itens horizontalmente */
 }
 
 .types-label {
-  font-weight: bold; /* Faz o texto "Types:" em negrito */
-  margin-bottom: 10px; /* Adiciona um espaçamento abaixo do texto "Types:" */
+  font-weight: bold;
+  /* Faz o texto "Types:" em negrito */
+  margin-bottom: 10px;
+  /* Adiciona um espaçamento abaixo do texto "Types:" */
 }
 
 .types-wrapper {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
-  gap: 10px; /* Adiciona espaçamento entre os itens */
-  justify-content: center; /* Centraliza os itens horizontalmente */
+  flex-wrap: wrap;
+  /* Permite que os itens se movam para a linha seguinte se necessário */
+  gap: 10px;
+  /* Adiciona espaçamento entre os itens */
+  justify-content: center;
+  /* Centraliza os itens horizontalmente */
 }
 
 .type-item {
-  border-radius: 5px; /* Adiciona bordas arredondadas */
-  padding: 5px 10px; /* Adiciona padding interno */
-  text-align: center; /* Centraliza o texto dentro dos itens */
+  border-radius: 5px;
+  /* Adiciona bordas arredondadas */
+  padding: 5px 10px;
+  /* Adiciona padding interno */
+  text-align: center;
+  /* Centraliza o texto dentro dos itens */
 }
 
 

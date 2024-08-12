@@ -43,6 +43,7 @@ export class PokemonDetailComponent implements OnInit {
       this.inputValue = value;
     });
     this.inputValue = '';
+    
   }
 
   getPokemon(name: string): void {
@@ -127,6 +128,9 @@ export class PokemonDetailComponent implements OnInit {
       this.getPokemon(pokemonName);
     });
     this.inputValue = '';
+    this.pokemonSearchService.clearSearchTerm();
+    console.log("blz!!")
+    
   }
 
   scrollLeft() {

@@ -12,6 +12,8 @@ export class PokemonSearchService {
   pokemonList$ = this.pokemonListSubject.asObservable();
   private inputValueSource = new BehaviorSubject<string>('');
   currentInputValue = this.inputValueSource.asObservable();
+  private searchTerm = new BehaviorSubject<string>('');
+  currentSearchTerm = this.searchTerm.asObservable();
 
   constructor(private pokemonService: PokemonService) {
     this.loadAllPokemon(); // Carregar todos os Pokémon ao iniciar o serviço
@@ -52,5 +54,9 @@ export class PokemonSearchService {
 
   updateInputValue(value: string) {
     this.inputValueSource.next(value);
+  }
+
+  clearSearchTerm() {
+    this.searchTerm.next(''); // Limpa o termo de busca
   }
 }

@@ -6,7 +6,7 @@
   <div #scrollContainer class="pesquisa-list" *ngIf="inputValue">
     <button class="nav-button prev" (click)="scrollLeft()">&#10094;</button>
     <div class="pesquisa-card" *ngFor="let pokemon of filteredPokemon" (click)="viewDetails(pokemon.name)">
-      <div class="card">
+      <div class="card card-pokemon-list">
         <img [src]="pokemon.image" alt="{{ pokemon.name }}">
       </div>
       <div class="card-body">
@@ -43,7 +43,8 @@
           <div class="stat-bar">
             <div class="progress" role="progressbar" aria-label="" aria-valuenow="25" aria-valuemin="0"
               aria-valuemax="80">
-              <div class="progress-bar " aria-valuemax="170" [style.width.%]="statPorcentagem(stat.base_stat)">{{ stat.base_stat }}</div>
+              <div class="progress-bar " aria-valuemax="170" [style.width.%]="statPorcentagem(stat.base_stat)">{{
+                stat.base_stat }}</div>
             </div>
           </div>
         </div>
@@ -55,17 +56,20 @@
   <div class="pokemon-list">
     <h2>Evoluções</h2>
     <div class="pokemon-cards">
-      <div class="pokemon-card" *ngFor="let pokemon of evolutions; let last = last" (click)="onEvolution(pokemon.name)">
-        <div class="card">
-          <img [src]="pokemon.image" alt="{{ pokemon.name }}" class="pokemon-image">
+      <ng-container *ngFor="let pokemon of evolutions; let last = last">
+        <div class="pokemon-card" (click)="onEvolution(pokemon.name)">
+          <div class="card">
+            <img [src]="pokemon.image" alt="{{ pokemon.name }}" class="pokemon-image">
+          </div>
+          <div class="card-body">
+            <h3>{{ replaceHyphens(pokemon.name) }}</h3>
+            <p class="pokemon-id">N° {{ pokemon.id }}</p>
+          </div>
         </div>
-        <div class="card-body">
-          <h3>{{ replaceHyphens(pokemon.name) }}</h3>
-          <p class="pokemon-id">N° {{ pokemon.id }}</p>
-        </div>
-      </div>
+        <!-- Exibe a seta apenas se não for o último Pokémon -->
+        <p *ngIf="!last" class="arrow">&#187;</p>
+      </ng-container>
     </div>
   </div>
-</div>
-
-
+  
+  

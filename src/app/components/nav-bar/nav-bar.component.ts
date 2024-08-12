@@ -7,12 +7,23 @@ import { PokemonSearchService } from '../../services/pokemon-search.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
-  constructor(private pokemonSearchService: PokemonSearchService) { }
+  searchTerm: string = '';
+
+  constructor(private pokemonSearchService: PokemonSearchService) {
+    this.pokemonSearchService.currentSearchTerm.subscribe(term => {
+      this.searchTerm = term;
+    });
+   }
+
+   onSearchChange(event: any) {
+    this.searchTerm = event.target.value;
+  } 
 
   onSearch(event: Event): void {
     const value = (event.target as HTMLInputElement).value.trim().toLowerCase().replace(/ /g, '-');
     this.pokemonSearchService.searchPokemon(value);
     this.onInputChange(value);
+
   }
 
   onInputChange(value: string) {
