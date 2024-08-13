@@ -162,3 +162,6 @@ export class PokemonDetailComponent implements OnInit {
     return value 
   }
 }
+
+// quando clicar na evolução subir a pagina pro topo 
+// arrumar visualização para dispositivos moveis 
