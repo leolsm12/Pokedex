@@ -118,7 +118,9 @@ export class PokemonDetailComponent implements OnInit {
         // Atualiza os detalhes do Pokémon na lista original
         pokemon.id = details.id;
         pokemon.image = details.image;
+        pokemon.types = details.types;
       });
+      console.log(pokemon)
     });
   }
 

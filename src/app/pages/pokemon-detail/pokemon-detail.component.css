@@ -1,10 +1,13 @@
 /* pokemon-detail.component.css */
-
+body {
+  background-color: #bbbbbb;
+}
 /* Container principal */
 .container {
   width: 90%;
   margin: 0 auto;
   padding: 20px;
+  background-color: #bbbbbb;
 }
 
 .pesquisa-list {
@@ -318,7 +321,7 @@
 .nav-button-list-prev {
   position: absolute;
   top: 25%;
-  width: 1rem;
+  
 }
 
 .nav-button-list-next {

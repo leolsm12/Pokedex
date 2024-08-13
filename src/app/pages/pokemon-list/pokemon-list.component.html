@@ -2,7 +2,7 @@
 <div class="pokedex-container">
   <button class="nav-button prev" (click)="prevPage()">&#10094;</button>
   <div class="pokemon-list">
-    <div class="pokemon-card" *ngFor="let pokemon of filteredPokemon" (click)="viewDetails(pokemon.name)">
+    <div class="pokemon-card {{pokemon.types[0]}}" *ngFor="let pokemon of filteredPokemon" (click)="viewDetails(pokemon.name)">
       <div class="card">
        
         <img 
@@ -13,7 +13,7 @@
       </div>
       <div class="card-body">
         <h2>{{ replaceHyphens(pokemon.name)}}</h2>
-        <p class="pokemon-id">{{ pokemon.id }}</p>
+        <p class="pokemon-id">N°{{ pokemon.id }}</p>
       </div>
     </div>
   </div>
