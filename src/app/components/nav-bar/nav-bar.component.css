@@ -4,6 +4,7 @@
     font-weight: 400;
     font-style: normal;
     width: 100%;
+    
 }
 
 .logo {
@@ -12,4 +13,20 @@
 
 .form {
     box-shadow: none;    
+}
+
+@media (max-width: 600px) {
+    .logo {
+        position: relative;
+        left: 65%;
+        
+    }
+
+    .form {
+        width:100%;    
+    }
+
+    .d-flex {
+        width: 100%;
+    }
 }

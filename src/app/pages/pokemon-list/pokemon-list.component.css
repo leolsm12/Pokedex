@@ -92,25 +92,53 @@
   /* Garante que o ID fique no final do container */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+  .pokedex-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
   .pokemon-list {
     grid-template-columns: repeat(2, 1fr);
-    /* Ajusta para 2 colunas em telas menores */
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    flex-direction: column;
-  }
-
-  header input {
-    margin-top: 10px;
+    grid-auto-rows: 250px;
+    gap: 15px;
+    margin: 0;
     width: 100%;
   }
 
-  .pokemon-list {
-    grid-template-columns: 1fr;
-    /* Ajusta para 1 coluna em telas menores */
+  .nav-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background-color: #009FB7;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    height: 10rem;
+  }
+
+
+  .pokemon-card {
+    padding: 5px;
+  }
+
+  .pokemon-card img {
+    max-height: 150px;
+  }
+
+  .pokemon-card h2 {
+    font-size: 1rem;
+  }
+
+  .pokemon-card p {
+    font-size: 0.9rem;
+  }
+
+  .pokemon-id {
+    font-size: 0.8rem;
   }
 }

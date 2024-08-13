@@ -4,7 +4,7 @@
   <!-- lista da pesquisa -->
 
   <div #scrollContainer class="pesquisa-list" *ngIf="inputValue">
-    <button class="nav-button prev" (click)="scrollLeft()">&#10094;</button>
+    <button class="nav-button nav-button-list-prev prev" (click)="scrollLeft()">&#10094;</button>
     <div class="pesquisa-card" *ngFor="let pokemon of filteredPokemon" (click)="viewDetails(pokemon.name)">
       <div class="card card-pokemon-list">
         <img [src]="pokemon.image" alt="{{ pokemon.name }}">
@@ -14,7 +14,7 @@
         <p class="pokemon-id">N°{{ pokemon.id }}</p>
       </div>
     </div>
-    <button class="nav-button next" (click)="scrollRight()">&#10095;</button>
+    <button class="nav-button nav-button-list-next next" (click)="scrollRight()">&#10095;</button>
   </div>
 
   <!-- Pokémon Principal -->

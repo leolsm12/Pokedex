@@ -104,6 +104,7 @@ export class PokemonDetailComponent implements OnInit {
         // Aguarda a navegação para garantir que o parâmetro 'name' seja atualizado
         this.getPokemon(name);
       });
+      this.scrollToTop();
   }
 
   filterPokemon(event: Event): void {
@@ -129,7 +130,7 @@ export class PokemonDetailComponent implements OnInit {
     });
     this.inputValue = '';
     this.pokemonSearchService.clearSearchTerm();
-    console.log("blz!!")
+    this.scrollToTop();
     
   }
 
@@ -147,6 +148,10 @@ export class PokemonDetailComponent implements OnInit {
     });
   }
 
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   nextPokemon(){
     const next = (this.pokemon.id + 1).toString();
     this.viewDetails(next);
@@ -162,6 +167,3 @@ export class PokemonDetailComponent implements OnInit {
     return value 
   }
 }
-
-// quando clicar na evolução subir a pagina pro topo 
-// arrumar visualização para dispositivos moveis 
