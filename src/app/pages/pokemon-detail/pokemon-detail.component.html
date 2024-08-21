@@ -7,7 +7,7 @@
     <button class="nav-button nav-button-list-prev prev" (click)="scrollLeft()">&#10094;</button>
     <div class="pesquisa-card" *ngFor="let pokemon of filteredPokemon" (click)="viewDetails(pokemon.name)">
       <div class="card card-pokemon-list">
-        <img [src]="pokemon.image" alt="{{ pokemon.name }}">
+        <img [src]="pokemon.image" alt="{{ pokemon.name | capitalize }}">
       </div>
       <div class="card-body">
         <h2>{{ replaceHyphens(pokemon.name)}}</h2>
@@ -26,12 +26,12 @@
           alt="{{ pokemon.name }}">
       </div>
       <div class="pokemon-info-container">
-        <h1>{{ replaceHyphens(pokemon.name) }}</h1>
+        <h1>{{ replaceHyphens(pokemon.name) | capitalize }}</h1>
         <p class="pokemon-id">Nº{{ pokemon.id }}</p>
         <p>Altura:{{ convertMetros(pokemon.height) }}</p>
         <p>Peso:{{ convertKg(pokemon.weight) }}Kg</p>
         <div class="types-container">
-          <p class="types-label">Types</p>
+          <p class="types-label">Tipo</p>
           <div class="types-wrapper">
             <p class="{{ tipo }} type-item" *ngFor="let tipo of pokemon.types">{{ tipo }}</p>
           </div>
@@ -62,7 +62,7 @@
             <img [src]="pokemon.image" alt="{{ pokemon.name }}" class="pokemon-image">
           </div>
           <div class="card-body">
-            <h3>{{ replaceHyphens(pokemon.name) }}</h3>
+            <h3>{{ replaceHyphens(pokemon.name) | capitalize }}</h3>
             <p class="pokemon-id">N° {{ pokemon.id }}</p>
           </div>
         </div>

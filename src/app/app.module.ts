@@ -8,13 +8,15 @@ import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.componen
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail.component';
+import { CapitalizePipe } from './capitalize.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     PokemonListComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

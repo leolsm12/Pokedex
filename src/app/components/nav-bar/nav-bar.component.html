@@ -9,7 +9,8 @@
          type="search" 
          placeholder="Buscar Pokémon..." 
          aria-label="Search" 
-         (input)="onSearch($event)" >
+         (input)="onSearch($event)"
+         [(ngModel)]="searchTerm" >
       </form>
     </div>
 </nav>

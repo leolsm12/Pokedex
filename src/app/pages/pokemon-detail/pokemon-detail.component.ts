@@ -105,6 +105,7 @@ export class PokemonDetailComponent implements OnInit {
         this.getPokemon(name);
       });
       this.scrollToTop();
+      this.pokemonSearchService.clearSearchTerm();
   }
 
   filterPokemon(event: Event): void {

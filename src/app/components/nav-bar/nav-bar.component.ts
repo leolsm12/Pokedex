@@ -14,7 +14,7 @@ export class NavBarComponent {
       this.searchTerm = term;
     });
    }
-
+   
    onSearchChange(event: any) {
     this.searchTerm = event.target.value;
   } 
@@ -28,5 +28,9 @@ export class NavBarComponent {
 
   onInputChange(value: string) {
     this.pokemonSearchService.updateInputValue(value);
+  }
+
+  clearSearch(): void {
+    this.searchTerm = '';
   }
 }
