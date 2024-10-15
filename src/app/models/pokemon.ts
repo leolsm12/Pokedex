@@ -3,7 +3,7 @@ export interface BasePokemon {
     name: string;
     url: string;
     image: string;
-    types: string[];  
+    types: string[] | null;  
 }
 
 export interface Pokemon extends BasePokemon {

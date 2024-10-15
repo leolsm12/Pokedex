@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { PokemonService } from './pokemon.service';
 import { Pokemon } from '../models/pokemon';
+import { NavBarComponent } from '../components/nav-bar/nav-bar.component';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class PokemonSearchService {
   private searchTerm = new BehaviorSubject<string>('');
   currentSearchTerm = this.searchTerm.asObservable();
 
-  constructor(private pokemonService: PokemonService) {
+  constructor(private pokemonService: PokemonService ) {
     this.loadAllPokemon(); // Carregar todos os Pokémon ao iniciar o serviço
   }
 

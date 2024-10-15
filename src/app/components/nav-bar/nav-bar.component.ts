@@ -14,6 +14,12 @@ export class NavBarComponent {
       this.searchTerm = term;
     });
    }
+
+   ngOnInit(): void {
+    // Limpa o valor de pesquisa quando a página é recarregada
+    this.clearSearch();
+  }
+
    
    onSearchChange(event: any) {
     this.searchTerm = event.target.value;
@@ -32,5 +38,6 @@ export class NavBarComponent {
 
   clearSearch(): void {
     this.searchTerm = '';
+    this.pokemonSearchService.searchPokemon('');
   }
 }

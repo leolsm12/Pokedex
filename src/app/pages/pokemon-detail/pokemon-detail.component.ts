@@ -27,7 +27,7 @@ export class PokemonDetailComponent implements OnInit {
     private router: Router, 
     private route: ActivatedRoute, 
     private pokemonService: PokemonService,
-    private pokemonSearchService: PokemonSearchService
+    private pokemonSearchService: PokemonSearchService,
   ) { }
 
   ngOnInit(): void {
@@ -72,7 +72,7 @@ export class PokemonDetailComponent implements OnInit {
     });
   }
 
-  //!== name.toLowerCase()
+
 
   replaceHyphens(name: string): string {
     return name.replace(/-/g, ' ');
@@ -131,10 +131,8 @@ export class PokemonDetailComponent implements OnInit {
       // Aguarda a navegação para garantir que o parâmetro 'name' seja atualizado
       this.getPokemon(pokemonName);
     });
-    this.inputValue = '';
     this.pokemonSearchService.clearSearchTerm();
     this.scrollToTop();
-    
   }
 
   scrollLeft() {

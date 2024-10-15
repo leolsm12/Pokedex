@@ -2,7 +2,9 @@
 <div class="pokedex-container">
   <button class="nav-button prev" (click)="prevPage()">&#10094;</button>
   <div class="pokemon-list">
-    <div class="pokemon-card {{pokemon.types[0]}}" *ngFor="let pokemon of filteredPokemon" (click)="viewDetails(pokemon.name)">
+    <div class="pokemon-card {{ pokemon.types?.[0] }}" 
+        *ngFor="let pokemon of filteredPokemon"
+        (click)="viewDetails(pokemon.name)">
       <div class="card">
        
         <img 

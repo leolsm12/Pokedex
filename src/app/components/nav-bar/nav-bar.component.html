@@ -1,6 +1,6 @@
 <nav class="navbar ">
     <div class=" container-fluid">
-      <a class="navbar-brand" [routerLink]="['/pokemon-list']">
+      <a class="navbar-brand" [routerLink]="['/pokemon-list']" (click)="clearSearch()">
         <img class="logo" src="assets/logo-pokemon.png" alt="">
       </a>
       <form class="d-flex " role="search">
@@ -10,7 +10,8 @@
          placeholder="Buscar Pokémon..." 
          aria-label="Search" 
          (input)="onSearch($event)"
-         [(ngModel)]="searchTerm" >
+         [(ngModel)]="searchTerm"
+         name="pokemonName" >
       </form>
     </div>
 </nav>

@@ -21,6 +21,7 @@ export class PokemonListComponent implements OnInit {
     this.pokemonSearchService.pokemonList$.subscribe(data => {
       this.filteredPokemon = data.slice(this.offset, this.offset + this.limit);
       this.loadPokemonDetails(this.filteredPokemon);
+      console.log(this.filteredPokemon)
     });
   }
 
