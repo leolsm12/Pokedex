@@ -68,14 +68,13 @@ export class PokemonDetailComponent implements OnInit {
       forkJoin(evolutionRequests).subscribe(evolutionData => {
         this.evolutions = evolutionData;
       });
-      console.log(this.pokemon.evolutionChain)
     });
   }
 
 
 
   replaceHyphens(name: string): string {
-    return name.replace(/-/g, ' ');
+    return name?.replace(/-/g, ' ');
   }
 
   convertMetros(valor:string) {
@@ -121,7 +120,6 @@ export class PokemonDetailComponent implements OnInit {
         pokemon.image = details.image;
         pokemon.types = details.types;
       });
-      console.log(pokemon)
     });
   }
 
